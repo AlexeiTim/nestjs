@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 import { UserLoginDTO } from './dto';
 import { AuthUserResponse } from './response';
 import { ApiTags, ApiResponse } from '@nestjs/swagger';
-import { UseGuards } from '@nestjs/common'
+import { UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/guards/jwt-guard';
 
 @Controller('auth')
@@ -19,7 +19,7 @@ export class AuthController {
     return this.authSerive.registerUser(dto)
   }
 
-  
+
   @ApiTags('API')
   @ApiResponse({ status: 200, type: AuthUserResponse })
   @HttpCode(200)
